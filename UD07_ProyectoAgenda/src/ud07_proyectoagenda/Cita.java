@@ -11,12 +11,13 @@ package ud07_proyectoagenda;
  * @author mati
  */
 public class Cita {
+
     private int hora;
     private int minutos;
     private String titulo;
     private String texto;
-    
-    public Cita(){
+
+    public Cita() {
     }
 
     public Cita(int hora, int minutos, String titulo, String texto) {
@@ -26,21 +27,20 @@ public class Cita {
         this.texto = texto;
     }
 
-    public String leerCita(){
-        StringBuilder st=new StringBuilder();
+    public String leerCita() {
+        StringBuilder st = new StringBuilder();
         st.append("").append(this.getHora()).append(":").append(this.getMinutos()).append("-");
         st.append(this.getTitulo()).append("\n");
         st.append(this.getTexto()).append("\n\n");
-        
+
         return st.toString();
-        
+
     }
-    
+
 //    @Override
 //    public String toString() {
 //        return "Cita{" + "hora=" + hora + ", minutos=" + minutos + ", titulo=" + titulo + ", texto=" + texto + '}';
 //    }
-
     public int getHora() {
         return hora;
     }
@@ -72,5 +72,5 @@ public class Cita {
     public void setTexto(String texto) {
         this.texto = texto;
     }
-    
+
 }

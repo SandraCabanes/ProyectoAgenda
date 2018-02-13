@@ -28,33 +28,33 @@ public class Pagina {
 
     public void borrarCita(Cita c) {
         for (Cita cita : citas) {
-            if(cita.getHora()==c.getHora()&&cita.getMinutos()==c.getMinutos()){
+            if (cita.getHora() == c.getHora() && cita.getMinutos() == c.getMinutos()) {
                 this.citas.remove(cita);
             }
-            
+
         }
     }
-    
-    public Cita buscarCita(int hora, int minutos){
-        Cita busqueda=null, temp;
-        int cont=0;
-        boolean encontrado=false;
-        
-        while(cont<this.citas.size()&& encontrado==false){
-            temp=this.citas.get(cont++);
-            if(temp.getHora() == hora&& temp.getMinutos()==minutos){
-                busqueda=temp;
-                encontrado=true;
+
+    public Cita buscarCita(int hora, int minutos) {
+        Cita busqueda = null, temp;
+        int cont = 0;
+        boolean encontrado = false;
+
+        while (cont < this.citas.size() && encontrado == false) {
+            temp = this.citas.get(cont++);
+            if (temp.getHora() == hora && temp.getMinutos() == minutos) {
+                busqueda = temp;
+                encontrado = true;
             }
         }
         return busqueda;
     }
-    
-    public void leerPagina(){
-        StringBuilder st=new StringBuilder(this.getDia()+"/"+this.getMes()+"\n");
-        if(this.citas.isEmpty()){
+
+    public void leerPagina() {
+        StringBuilder st = new StringBuilder(this.getDia() + "/" + this.getMes() + "\n");
+        if (this.citas.isEmpty()) {
             st.append("La página está en blanco. \n");
-        }else{
+        } else {
             for (int i = 0; i < this.citas.size(); i++) {
                 st.append(this.citas.get(i).leerCita());
             }
@@ -86,6 +86,4 @@ public class Pagina {
         this.citas = citas;
     }
 
-    
-    
 }
